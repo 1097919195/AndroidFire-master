@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../AndroidFire-master.iml" filepath="$PROJECT_DIR$/../../AndroidFire-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../UserGuide/UserGuide.iml" filepath="$PROJECT_DIR$/../UserGuide/UserGuide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../app/app.iml" filepath="$PROJECT_DIR$/../../app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common.iml" filepath="$PROJECT_DIR$/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../irecyclerview/irecyclerview.iml" filepath="$PROJECT_DIR$/../irecyclerview/irecyclerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jcvideoplayer/jcvideoplayer.iml" filepath="$PROJECT_DIR$/../jcvideoplayer/jcvideoplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../library.iml" filepath="$PROJECT_DIR$/../library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../oneKeyShareSDK/oneKeyShareSDK.iml" filepath="$PROJECT_DIR$/../oneKeyShareSDK/oneKeyShareSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../photoPicker/photoPicker.iml" filepath="$PROJECT_DIR$/../photoPicker/photoPicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../selectordialog/selectordialog.iml" filepath="$PROJECT_DIR$/../selectordialog/selectordialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../zxingScan/zxingScan.iml" filepath="$PROJECT_DIR$/../zxingScan/zxingScan.iml" />
+    </modules>
+  </component>
+</project>

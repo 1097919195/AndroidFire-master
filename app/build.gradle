@@ -1,0 +1,66 @@
+/**
+ *表示是一个应用,如果是类库的话:apply plugin:'com.android.library'
+ */
+apply plugin: 'com.android.application'
+
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    compileSdkVersion 24//编译的SDK版本
+    buildToolsVersion '25.0.0'//编译的Tools版本
+
+    defaultConfig {//默认配置
+        applicationId "jaydenxiao.com.androidfire1"//应用程序的包名
+        minSdkVersion 15//支持的最低版本
+        targetSdkVersion 24//支持的目标版本
+        versionCode 4//版本号(对消费者不可见，仅用于应用市场、程序内部识别版本，判断新旧等用途)
+        versionName "1.0.3"//版本名(展示给消费者，消费者会通过它认知自己安装的版本)
+    }
+    buildTypes {//build类型
+        release {//发布
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled false//混淆关闭
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'//指定混淆规则文件
+            //apk命名
+            android.applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        //这里修改apk文件名
+                        def fileName = "AndroidFire-${defaultConfig.versionCode}-${defaultConfig.versionName}-${releaseTime()}.apk"
+//                        output.outputFileName  = fileName//studio3.0中要这么写
+                        output.outputFile = new File(outputFile.parent, fileName) //studio2.3
+                    }
+                }
+            }
+        }
+        debug{//调试
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+        }
+    }
+    //设置虚拟机堆内存空间大小，避免在编译期间OOM(内存溢出)
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+    }
+    //打包不检查
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])//编译lib目录下的.jar文件
+
+    compile project(':library:photoPicker')//图片选择
+    compile project(':library:irecyclerview')//万能适配器和recyclerview
+    compile project(':library:oneKeyShareSDK')//分享
+    compile project(':library:jcvideoplayer')//视频播放
+    compile project(':library:selectordialog')//常用提示框
+    compile project(':library:UserGuide')//常用提示框
+
+
+}

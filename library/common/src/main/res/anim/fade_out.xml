@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--AccelerateInterpolator在动画开始的地方速率改变比较慢，然后开始加速-->
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_interpolator"
+    android:fromAlpha="1.0"
+    android:toAlpha="0.0"
+    android:duration="300" />

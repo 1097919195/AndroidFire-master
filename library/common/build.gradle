@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+        }
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+        }
+    }
+}
+
+
+ext {
+    isLibrary = true
+    pomArtifactId = "Common"
+    pomDescription = "Common of android picker"
+}
+
+allprojects {
+    repositories {//为当前项目提供所需依赖包
+        jcenter()
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/repositories/releases/'//阿里云推送仓库地址
+        }
+        maven {
+            url "https://jitpack.io"//可用JitPack获取github上开源项目的jar/arr包,在JitPack上输入Github地址，能生成对应的依赖,直接复制代码，在自己工程使用就ok了
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/Parse-1.9.4.jar')
+    compile files('libs/commons-codec-1.6.jar')
+    compile files('libs/alipaySdk-20160516.jar')
+
+    compile 'com.android.support:support-v4:24.+'
+    compile 'com.android.support:recyclerview-v7:24.+'
+    compile 'com.android.support:support-annotations:24.+'
+    compile 'com.android.support:design:24.+'
+    compile 'com.android.support:cardview-v7:24.+'
+    compile 'com.android.support:appcompat-v7:24.+'
+
+    //retrofit和rxjava
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.1.2'
+    compile 'io.reactivex:rxjava:1.0.1'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+
+    //Rxlifecycle
+    compile 'com.trello:rxlifecycle:0.3.1'
+    compile 'com.trello:rxlifecycle-components:0.3.1'
+
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.8@aar'//菜单栏
+    compile 'com.android.support:multidex:1.0.0'//分包
+    compile 'com.alibaba:fastjson:1.2.8'//json解析封装框架
+    compile 'com.commit451:PhotoView:1.2.4'//图片缩放
+    compile 'com.orhanobut:logger:1.13'//打印日志
+    compile 'com.github.bumptech.glide:glide:3.6.1'//显示图片框架
+    compile 'com.jakewharton:butterknife:7.0.1'//view注解
+    compile 'com.github.clans:fab:1.6.4'//悬浮动画菜单
+    compile 'cn.hugeterry.updatefun:updatefun:1.8.6'//fire.im自动更新
+    compile 'com.umeng.analytics:analytics:latest.integration'//友盟统计
+}
+
+
