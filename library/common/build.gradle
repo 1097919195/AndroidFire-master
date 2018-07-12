@@ -41,7 +41,7 @@ allprojects {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(include: ['*.jar'], dir: 'libs')//一次性引入libs目录下所有jar文件
     compile files('libs/Parse-1.9.4.jar')
     compile files('libs/commons-codec-1.6.jar')
     compile files('libs/alipaySdk-20160516.jar')

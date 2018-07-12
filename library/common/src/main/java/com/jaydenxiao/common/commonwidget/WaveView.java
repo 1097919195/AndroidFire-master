@@ -32,12 +32,12 @@ public class WaveView extends View {
         mBelowWavePath = new Path();
         //初始化画笔
         mAboveWavePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mAboveWavePaint.setAntiAlias(true);
+        mAboveWavePaint.setAntiAlias(true);// 去除画笔锯齿
         mAboveWavePaint.setStyle(Paint.Style.FILL);
         mAboveWavePaint.setColor(Color.WHITE);
 
         mBelowWavePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mBelowWavePaint.setAntiAlias(true);
+        mBelowWavePaint.setAntiAlias(true);// 去除画笔锯齿
         mBelowWavePaint.setStyle(Paint.Style.FILL);
         mBelowWavePaint.setColor(Color.WHITE);
         mBelowWavePaint.setAlpha(80);
@@ -48,8 +48,9 @@ public class WaveView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
 
-        canvas.setDrawFilter(mDrawFilter);
+        canvas.setDrawFilter(mDrawFilter);// 从canvas层面去除绘制时锯齿
 
+        //重置绘制路线，即隐藏之前绘制的轨迹
         mAbovePath.reset();
         mBelowWavePath.reset();
 
@@ -80,6 +81,7 @@ public class WaveView extends View {
         mAbovePath.lineTo(getRight(), getBottom());
         mBelowWavePath.lineTo(getRight(), getBottom());
 
+        //开始绘制
         canvas.drawPath(mAbovePath, mAboveWavePaint);
         canvas.drawPath(mBelowWavePath, mBelowWavePaint);
 

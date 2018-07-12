@@ -55,6 +55,7 @@
             android:text="@string/friend_zone_title"
             android:textColor="?attr/dayNightTwoTextColor"
             app:dayNightTwoTextColorAttr="dayNightTwoTextColor" />
+        <!--textColor决定刚进入时的加载主题，dayNightTwoTextColorAttr立即切换到对应主题-->
     </LinearLayout>
 
     <LinearLayout
