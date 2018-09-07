@@ -7,7 +7,7 @@ import java.lang.reflect.ParameterizedType;
  */
 public class TUtil {
     //(class)((ParameterizedType)(this.getClass(）.getGenericSuperclass()).getActualTypeArguments()[0] 这是一个获取类的方法
-    //ParameterizedType实现泛型类类型参数化
+    //ParameterizedType实现泛型类类型参数化 https://www.jianshu.com/p/b1ad2f1d3e3e
     //getGenericSuperclass方法可以获取当前对象的直接超类的 Type
     //getActualTypeArguments 得到该泛型
     public static <T> T getT(Object o, int i) {
