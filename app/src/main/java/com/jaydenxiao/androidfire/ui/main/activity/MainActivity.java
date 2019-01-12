@@ -187,7 +187,7 @@ public class MainActivity extends BaseActivity {
     /**
      * 在onSaveInstanceState()方法之后去调用commit()，就会抛出我们遇到的这个异常，这是因为在
      * onSaveInstanceState()之后调用commit()方法，这些变化就不会被activity存储，即这些状态会被丢失,
-     * 但我们可以去用commitAllowingStateLoss()这个方法去代替commit()来解决这个为题
+     * 但我们可以去用commitAllowingStateLoss()这个方法去代替commit()来解决这个为题,但是并不是可以随便哪里都用的，可能会造成数据丢失（参考阿里android开发手册）
      */
 
     //切换
